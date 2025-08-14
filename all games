@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Bowl Clone (Demo)</title>
+  <style>
+    body { background: #222; color: #fff; font-family: sans-serif; text-align: center; }
+    h1 { margin-top: 2em; }
+  </style>
+</head>
+<body>
+  <h1>Retro Bowl Clone</h1>
+  <p>This is a placeholder for an open-source Retro Bowl clone.<br>
+  Replace this file with your own game if you like!</p>
+</body>
+</html>
