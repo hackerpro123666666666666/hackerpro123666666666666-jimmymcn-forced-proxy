@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Bowl (Demo)</title>
+  <style>
+    body { background: #1a1a1a; color: #fff; font-family: monospace; display: flex; align-items: center; justify-content: center; height: 100vh; }
+    .center { text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <h1>Retro Bowl</h1>
+    <p>This is a placeholder for Retro Bowl.<br>
+    For the real game, embed or link a web version here.</p>
+  </div>
+</body>
+</html>
