@@ -1,0 +1,225 @@
+:root {
+    --bg-light: #f7f8fa;
+    --bg-dark: #18191a;
+    --text-light: #222;
+    --text-dark: #f7f8fa;
+    --accent: #4f8cff;
+    --accent2: #9aa4ff;
+}
+body {
+    background: var(--bg-light);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background .3s, color .3s;
+}
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: #fff;
+}
+#theme-toggle {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background: var(--accent2);
+    padding: 0.5rem 0;
+}
+.tab-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.4rem;
+    margin: 0 0.3rem;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: background 0.2s;
+}
+.tab-btn.active, .tab-btn:focus {
+    background: var(--accent);
+    outline: none;
+}
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+body.dark main {
+    background: rgba(20,20,20,0.95);
+}
+.tab-content {
+    margin-top: 1rem;
+}
+#proxy-form {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+#proxy-query {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+#proxy-form button[type="submit"], #settings-form button[type="submit"] {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#proxy-form button[type="submit"]:hover, #settings-form button[type="submit"]:hover {
+    background: #274b7a;
+}
+#proxy-frame-container, #game-frame-container {
+    margin-top: 1.1rem;
+    width: 100%;
+    height: 520px;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #222;
+    position: relative;
+}
+#proxy-frame, #game-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #111;
+}
+.note {
+    margin-top: 0.6rem;
+    color: #666;
+    font-size: 0.96rem;
+}
+.game-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.game-tab-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background: var(--accent2);
+    color: #fff;
+    border-radius: 7px 7px 0 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.18s;
+}
+.game-tab-btn.active, .game-tab-btn:focus {
+    background: var(--accent);
+    outline: none;
+}
+footer {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    color: #888;
+    font-size: 0.98rem;
+}
+body.dark footer {
+    color: #bbb;
+}
+#settings-form {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+#search-engine-select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 1rem;
+}
+.tech-item {
+    background: #f5f6fa;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    padding: 1rem 1.2rem;
+    min-width: 250px;
+    max-width: 320px;
+    flex: 1 1 280px;
+}
+body.dark .tech-item {
+    background: #23242a;
+}
+.tech-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
+.tech-item .status {
+    font-size: 0.98em;
+    color: #777;
+}
+#tech-demo-container {
+    margin-top: 2rem;
+}
+
+/* Apps Tab Styles */
+.apps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1em;
+    justify-content: center;
+    margin-top: 2em;
+}
+.app-btn {
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    color: #111;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+body.dark .app-btn {
+    background: #23242a;
+    color: #fafafa;
+    border: 2px solid #444;
+}
+.app-btn img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5em;
+}
+.app-btn:hover, .app-btn:focus {
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 16px rgba(79,140,255,0.13);
+}

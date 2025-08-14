@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JimmyMcN Forced Proxy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>JimmyMcN Forced Proxy</h2>
+        <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+    </header>
+    <nav>
+        <button class="tab-btn" data-tab="proxy-tab">Proxy</button>
+        <button class="tab-btn" data-tab="games-tab">Games</button>
+        <button class="tab-btn" data-tab="apps-tab">Apps</button>
+        <button class="tab-btn" data-tab="settings-tab">Settings</button>
+        <button class="tab-btn" data-tab="techstack-tab">Techstack</button>
+    </nav>
+    <main>
+        <section class="tab-content" id="proxy-tab" style="display:none;">
+            <form id="proxy-form">
+                <input id="proxy-query" type="text" placeholder="Enter a URL (or search term)" autocomplete="off" />
+                <button type="submit">Go</button>
+            </form>
+            <div class="note">Using <span id="engine-name">DuckDuckGo</span> for search. <br> 
+                <small>You can change your search engine in settings.</small>
+            </div>
+            <div id="proxy-frame-container">
+                <iframe id="proxy-frame" title="Proxy"></iframe>
+            </div>
+        </section>
+        <section class="tab-content" id="games-tab" style="display:none;">
+            <div class="game-tabs">
+                <button class="game-tab-btn active" data-game="retro-bowl">Retro Bowl</button>
+                <button class="game-tab-btn" data-game="tetris">Tetris</button>
+                <button class="game-tab-btn" data-game="2048">2048</button>
+                <button class="game-tab-btn" data-game="snake">Snake</button>
+                <button class="game-tab-btn" data-game="pong">Pong</button>
+                <button class="game-tab-btn" data-game="flappy-bird">Flappy Bird</button>
+            </div>
+            <div id="game-frame-container">
+                <iframe id="game-frame" title="Game" src="games/retro-bowl/index.html"></iframe>
+            </div>
+        </section>
+        <section class="tab-content" id="apps-tab" style="display:none;">
+            <h2>Apps</h2>
+            <div class="apps-grid">
+                <button class="app-btn" onclick="window.open('https://mail.google.com','_blank')">
+                    <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="">Gmail
+                </button>
+                <button class="app-btn" onclick="window.open('https://discord.com/app','_blank')">
+                    <img src="https://discord.com/assets/847541504914fd33810e70a0ea73177e.ico" alt="">Discord
+                </button>
+                <button class="app-btn" onclick="window.open('https://youtube.com','_blank')">
+                    <img src="https://www.youtube.com/s/desktop/4a6d2c0e/img/favicon_144x144.png" alt="">YouTube
+                </button>
+                <button class="app-btn" onclick="window.open('https://calendar.google.com','_blank')">
+                    <img src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png" alt="">Calendar
+                </button>
+                <button class="app-btn" onclick="window.open('https://docs.google.com','_blank')">
+                    <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="">Docs
+                </button>
+            </div>
+        </section>
+        <section class="tab-content" id="settings-tab" style="display:none;">
+            <h2>Settings</h2>
+            <form id="settings-form">
+                <label for="search-engine-select">Search engine:</label>
+                <select id="search-engine-select">
+                    <option value="duckduckgo">DuckDuckGo</option>
+                    <option value="google">Google</option>
+                </select>
+                <button type="submit">Save</button>
+            </form>
+        </section>
+        <section class="tab-content" id="techstack-tab" style="display:none;">
+            <h2>Techstack</h2>
+            <div class="tech-list">
+                <div class="tech-item">
+                    <h3>HTML5, CSS3, JavaScript</h3>
+                    <div class="status">Frontend</div>
+                </div>
+                <div class="tech-item">
+                    <h3>GitHub Pages</h3>
+                    <div class="status">Hosting</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 JimmyMcN Forced Proxy &mdash; <a href="https://github.com/hackerpro123666666666666/jimmymcn-forced-proxy" target="_blank" rel="noopener">GitHub</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
