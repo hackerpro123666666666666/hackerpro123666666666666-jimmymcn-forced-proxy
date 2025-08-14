@@ -182,3 +182,18 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!-- Games Tab -->
+<section id="games" class="tab-content" style="display:none;">
+    <h2>Games</h2>
+    <div class="game-tabs">
+        <button class="game-tab-btn active" data-game="retro-bowl">Retro Bowl</button>
+        <button class="game-tab-btn" data-game="tetris">Tetris</button>
+        <button class="game-tab-btn" data-game="2048">2048</button>
+        <button class="game-tab-btn" data-game="snake">Snake</button>
+        <button class="game-tab-btn" data-game="pong">Pong</button>
+        <button class="game-tab-btn" data-game="flappy-bird">Flappy Bird</button>
+    </div>
+    <div id="game-frame-container">
+        <iframe id="game-frame" src="games/retro-bowl/index.html" title="Retro Bowl" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
