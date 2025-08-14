@@ -184,3 +184,42 @@ body.dark .tech-item {
 #tech-demo-container {
     margin-top: 2rem;
 }
+
+/* Apps Tab Styles */
+.apps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1em;
+    justify-content: center;
+    margin-top: 2em;
+}
+.app-btn {
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    color: #111;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+body.dark .app-btn {
+    background: #23242a;
+    color: #fafafa;
+    border: 2px solid #444;
+}
+.app-btn img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5em;
+}
+.app-btn:hover, .app-btn:focus {
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 16px rgba(79,140,255,0.13);
+}
