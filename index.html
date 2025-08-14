@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jimmymcn forced proxy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Eruda for devtools demo -->
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <!-- JSZip for demo -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- JS-cookie for demo -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <!-- Localforage for demo -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
+    <!-- Iro.js for color picker demo -->
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5.6.4/dist/iro.min.js"></script>
+    <!-- Dragabilly for drag demo -->
+    <script src="https://cdn.jsdelivr.net/npm/dragabilly@3.0.0/dist/dragabilly.pkgd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>jimmymcn forced proxy</h1>
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </header>
+    <nav>
+        <button class="tab-btn" data-tab="proxy">Proxy</button>
+        <button class="tab-btn" data-tab="games">Games</button>
+        <button class="tab-btn" data-tab="settings">Settings</button>
+        <button class="tab-btn" data-tab="techstack">Techstack</button>
+    </nav>
+    <main>
+        <!-- Proxy Tab -->
+        <section id="proxy" class="tab-content">
+            <h2>Search</h2>
+            <form id="proxy-form">
+                <input type="text" id="proxy-query" placeholder="Enter search or URL..." required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="proxy-frame-container">
+                <iframe id="proxy-frame" title="Search Result" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+            </div>
+            <div class="note" id="engine-note">
+                Using <span id="engine-name"></span> as your search engine.
+                (Change in Settings)
+            </div>
+        </section>
+        <!-- Games Tab -->
+        <section id="games" class="tab-content" style="display:none;">
+            <h2>Games</h2>
+            <div class="game-tabs">
+                <button class="game-tab-btn active" data-game="retro-bowl">Retro Bowl</button>
+                <button class="game-tab-btn" data-game="tetris">Tetris</button>
+                <button class="game-tab-btn" data-game="2048">2048</button>
+            </div>
+            <div id="game-frame-container">
+                <iframe id="game-frame" src="games/retro-bowl/index.html" title="Retro Bowl" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <!-- Settings Tab -->
+        <section id="settings" class="tab-content" style="display:none;">
+            <h2>Settings</h2>
+            <form id="settings-form">
+                <label for="search-engine-select"><strong>Choose your search engine:</strong></label>
+                <select id="search-engine-select">
+                    <option value="duckduckgo">DuckDuckGo (Private)</option>
+                    <option value="google">Google</option>
+                </select>
+                <button type="submit">Save</button>
+            </form>
+            <p class="note">This will change the search engine used in the Proxy tab.</p>
+        </section>
+        <!-- Techstack Tab -->
+        <section id="techstack" class="tab-content" style="display:none;">
+            <h2>Techstack</h2>
+            <div class="tech-list">
+
+                <div class="tech-item">
+                    <h3>Chrome Tabs</h3>
+                    <p>Modern browser tab simulation with drag and close. <span class="status">[Browser Demo]</span></p>
+                    <button onclick="openChromeTabsDemo()">Try Demo</button>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Ultraviolet V3</h3>
+                    <p>Next-gen Node.js web proxy. <a href="https://github.com/titaniumnetwork-dev/Ultraviolet" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Scramjet</h3>
+                    <p>Stream processing for Node.js. <a href="https://scramjet.org/" target="_blank">Docs</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Eclipse</h3>
+                    <p>Node.js-based proxy. <a href="https://github.com/upuptop/Eclipse" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>BareMux V2</h3>
+                    <p>Multiplexer for Bare proxies. <a href="https://github.com/tomphttp/bare-mux" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Libcurl.js</h3>
+                    <p>libcurl bindings for Node.js. <a href="https://github.com/JCMais/node-libcurl" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Epoxy</h3>
+                    <p>Full-featured reverse proxy. <a href="https://github.com/epoxyjs/epoxy" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Wisp JS Client</h3>
+                    <p>Wisp client for JS. <a href="https://github.com/wisp-js/wisp" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>FilerJS</h3>
+                    <p>Browser file system emulation. <a href="https://github.com/filerjs/filer" target="_blank">GitHub</a> <span class="status">[Browser Demo]</span></p>
+                    <button onclick="openFilerDemo()">Demo: Create file</button>
+                </div>
+
+                <div class="tech-item">
+                    <h3>JSZip</h3>
+                    <p>JavaScript ZIP archive creation. <a href="https://stuk.github.io/jszip/" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
+                    <button onclick="openJSZipDemo()">Demo: Make ZIP</button>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Eruda</h3>
+                    <p>Console for mobile browsers. <a href="https://github.com/liriliri/eruda" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
+                    <button onclick="window.eruda.init();alert('Eruda DevTools opened!')">Open Eruda</button>
+                </div>
+
+                <div class="tech-item">
+                    <h3>JS-cookie</h3>
+                    <p>Simple API for cookies in JS. <a href="https://github.com/js-cookie/js-cookie" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
+                    <button onclick="openJSCookieDemo()">Demo: Set/Get Cookie</button>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Dragabilly</h3>
+                    <p>Drag-and-drop for any element. <a href="https://github.com/desandro/dragabilly" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
+                    <button onclick="openDragabillyDemo()">Demo: Drag Box</button>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Localforage</h3>
+                    <p>Storage library for offline web apps. <a href="https://github.com/localForage/localForage" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
+                    <button onclick="openLocalforageDemo()">Demo: Save/Load Text</button>
+                </div>
+
+                <div class="tech-item">
+                    <h3>NightmareJS</h3>
+                    <p>Automated browser testing and scraping.<br><em>In Development, not available here.</em></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Workerware</h3>
+                    <p>Worker middleware for streams. <a href="https://github.com/scramjetorg/workerware" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Sandstone (Modified)</h3>
+                    <p>Custom Node.js proxy fork. <a href="https://github.com/titaniumnetwork-dev/sandstone" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
+                </div>
+
+                <div class="tech-item">
+                    <h3>Iro.js</h3>
+                    <p>Color picker library. <a href="https://iro.js.org/" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
+                    <button onclick="openIroDemo()">Demo: Color Picker</button>
+                </div>
+            </div>
+            <div id="tech-demo-container"></div>
+        </section>
+    </main>
+    <footer>
+        <small>© 2025 jimmymcn forced proxy. For educational purposes only.</small>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
