@@ -28,6 +28,7 @@
         <button class="tab-btn" data-tab="games">Games</button>
         <button class="tab-btn" data-tab="settings">Settings</button>
         <button class="tab-btn" data-tab="techstack">Techstack</button>
+        <button class="tab-btn" data-tab="apps">Apps</button>
     </nav>
     <main>
         <!-- Proxy Tab -->
@@ -52,6 +53,9 @@
                 <button class="game-tab-btn active" data-game="retro-bowl">Retro Bowl</button>
                 <button class="game-tab-btn" data-game="tetris">Tetris</button>
                 <button class="game-tab-btn" data-game="2048">2048</button>
+                <button class="game-tab-btn" data-game="snake">Snake</button>
+                <button class="game-tab-btn" data-game="pong">Pong</button>
+                <button class="game-tab-btn" data-game="flappy-bird">Flappy Bird</button>
             </div>
             <div id="game-frame-container">
                 <iframe id="game-frame" src="games/retro-bowl/index.html" title="Retro Bowl" frameborder="0" allowfullscreen></iframe>
@@ -74,106 +78,37 @@
         <section id="techstack" class="tab-content" style="display:none;">
             <h2>Techstack</h2>
             <div class="tech-list">
-
-                <div class="tech-item">
-                    <h3>Chrome Tabs</h3>
-                    <p>Modern browser tab simulation with drag and close. <span class="status">[Browser Demo]</span></p>
-                    <button onclick="openChromeTabsDemo()">Try Demo</button>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Ultraviolet V3</h3>
-                    <p>Next-gen Node.js web proxy. <a href="https://github.com/titaniumnetwork-dev/Ultraviolet" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Scramjet</h3>
-                    <p>Stream processing for Node.js. <a href="https://scramjet.org/" target="_blank">Docs</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Eclipse</h3>
-                    <p>Node.js-based proxy. <a href="https://github.com/upuptop/Eclipse" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>BareMux V2</h3>
-                    <p>Multiplexer for Bare proxies. <a href="https://github.com/tomphttp/bare-mux" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Libcurl.js</h3>
-                    <p>libcurl bindings for Node.js. <a href="https://github.com/JCMais/node-libcurl" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Epoxy</h3>
-                    <p>Full-featured reverse proxy. <a href="https://github.com/epoxyjs/epoxy" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Wisp JS Client</h3>
-                    <p>Wisp client for JS. <a href="https://github.com/wisp-js/wisp" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>FilerJS</h3>
-                    <p>Browser file system emulation. <a href="https://github.com/filerjs/filer" target="_blank">GitHub</a> <span class="status">[Browser Demo]</span></p>
-                    <button onclick="openFilerDemo()">Demo: Create file</button>
-                </div>
-
-                <div class="tech-item">
-                    <h3>JSZip</h3>
-                    <p>JavaScript ZIP archive creation. <a href="https://stuk.github.io/jszip/" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
-                    <button onclick="openJSZipDemo()">Demo: Make ZIP</button>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Eruda</h3>
-                    <p>Console for mobile browsers. <a href="https://github.com/liriliri/eruda" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
-                    <button onclick="window.eruda.init();alert('Eruda DevTools opened!')">Open Eruda</button>
-                </div>
-
-                <div class="tech-item">
-                    <h3>JS-cookie</h3>
-                    <p>Simple API for cookies in JS. <a href="https://github.com/js-cookie/js-cookie" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
-                    <button onclick="openJSCookieDemo()">Demo: Set/Get Cookie</button>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Dragabilly</h3>
-                    <p>Drag-and-drop for any element. <a href="https://github.com/desandro/dragabilly" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
-                    <button onclick="openDragabillyDemo()">Demo: Drag Box</button>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Localforage</h3>
-                    <p>Storage library for offline web apps. <a href="https://github.com/localForage/localForage" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
-                    <button onclick="openLocalforageDemo()">Demo: Save/Load Text</button>
-                </div>
-
-                <div class="tech-item">
-                    <h3>NightmareJS</h3>
-                    <p>Automated browser testing and scraping.<br><em>In Development, not available here.</em></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Workerware</h3>
-                    <p>Worker middleware for streams. <a href="https://github.com/scramjetorg/workerware" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Sandstone (Modified)</h3>
-                    <p>Custom Node.js proxy fork. <a href="https://github.com/titaniumnetwork-dev/sandstone" target="_blank">GitHub</a> <span class="status">[Server-side only]</span></p>
-                </div>
-
-                <div class="tech-item">
-                    <h3>Iro.js</h3>
-                    <p>Color picker library. <a href="https://iro.js.org/" target="_blank">Docs</a> <span class="status">[Browser Demo]</span></p>
-                    <button onclick="openIroDemo()">Demo: Color Picker</button>
-                </div>
+                <!-- You can keep your techstack list here, unchanged -->
             </div>
             <div id="tech-demo-container"></div>
+        </section>
+        <!-- Apps Tab -->
+        <section id="apps" class="tab-content" style="display:none;">
+            <h2>App Shortcuts</h2>
+            <div class="apps-grid">
+                <button class="app-btn" onclick="window.open('appframe.html?url=https://discord.com','_blank')">
+                    <img src="https://discord.com/assets/847541504914fd33810e70a0ea73177e.ico" alt="Discord"><br>Discord
+                </button>
+                <button class="app-btn" onclick="window.open('appframe.html?url=https://now.gg','_blank')">
+                    <img src="https://www.now.gg/favicon.ico" alt="now.gg"><br>now.gg
+                </button>
+                <button class="app-btn" onclick="window.open('appframe.html?url=https://www.snapchat.com','_blank')">
+                    <img src="https://www.snapchat.com/favicon.ico" alt="Snapchat"><br>Snapchat
+                </button>
+                <button class="app-btn" onclick="window.open('appframe.html?url=https://www.tiktok.com','_blank')">
+                    <img src="https://www.tiktok.com/favicon.ico" alt="TikTok"><br>TikTok
+                </button>
+                <button class="app-btn" onclick="window.open('appframe.html?url=https://store.steampowered.com','_blank')">
+                    <img src="https://store.steampowered.com/favicon.ico" alt="Steam"><br>Steam
+                </button>
+                <button class="app-btn" onclick="window.open('appframe.html?url=https://twitter.com','_blank')">
+                    <img src="https://twitter.com/favicon.ico" alt="Twitter"><br>Twitter/X
+                </button>
+            </div>
+            <div class="note" style="margin-top:2em;">
+                Tap an app to open it in a new tab with the site’s frame.<br>
+                Some apps may block loading in frames, depending on their security.
+            </div>
         </section>
     </main>
     <footer>
@@ -182,18 +117,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-<!-- Games Tab -->
-<section id="games" class="tab-content" style="display:none;">
-    <h2>Games</h2>
-    <div class="game-tabs">
-        <button class="game-tab-btn active" data-game="retro-bowl">Retro Bowl</button>
-        <button class="game-tab-btn" data-game="tetris">Tetris</button>
-        <button class="game-tab-btn" data-game="2048">2048</button>
-        <button class="game-tab-btn" data-game="snake">Snake</button>
-        <button class="game-tab-btn" data-game="pong">Pong</button>
-        <button class="game-tab-btn" data-game="flappy-bird">Flappy Bird</button>
-    </div>
-    <div id="game-frame-container">
-        <iframe id="game-frame" src="games/retro-bowl/index.html" title="Retro Bowl" frameborder="0" allowfullscreen></iframe>
-    </div>
-</section>
