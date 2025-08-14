@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App Frame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin:0; background:#18191a; color:#fff; font-family:sans-serif;}
+    header {
+      background: #4f8cff;
+      color: #fff;
+      padding: 1em 2em;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #app-iframe {
+      width: 100vw;
+      height: calc(100vh - 60px);
+      border: none;
+      background: #111;
+      display: block;
+    }
+    .home-btn {
+      background: #fff;
+      color: #4f8cff;
+      border-radius: 6px;
+      border: none;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 1em;
+    }
+    .warn { color: #ff6a00; font-size: 0.98em; margin: 1em 2em; }
+  </style>
+</head>
+<body>
+  <header>
+    <span id="app-title">App</span>
+    <div>
+      <a href="index.html" class="home-btn">🏠 Back to Site</a>
+    </div>
+  </header>
+  <iframe id="app-iframe"></iframe>
+  <div class="warn" id="warn-msg" style="display:none;">
+    This site does not allow itself to be loaded in a frame. Try opening in a new tab.
+  </div>
+  <script>
+    function getUrlParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+    const url = getUrlParam("url");
+    const iframe = document.getElementById('app-iframe');
+    const appTitle = document.getElementById('app-title');
+    if(url) {
+      iframe.src = url;
+      let domain = (new URL(url)).hostname.replace('www.','');
+      appTitle.textContent = domain.charAt(0).toUpperCase() + domain.slice(1);
+    }
+    iframe.onload = function() {
+      // Some sites block loading in iframe (X-Frame-Options)
+      setTimeout(()=>{
+        try {
+          if(!iframe.contentWindow || iframe.contentDocument.body.childElementCount === 0) {
+            document.getElementById('warn-msg').style.display = "";
+          }
+        } catch {
+          document.getElementById('warn-msg').style.display = "";
+        }
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
