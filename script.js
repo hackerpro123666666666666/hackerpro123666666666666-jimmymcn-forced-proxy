@@ -271,4 +271,8 @@ window.openFilerDemo = function() {
         document.getElementById('filer-result').textContent = "Read file: " + (content || "(no file)");
     }
     window.closeDemo = function() { container.innerHTML = ""; }
-}
+}const gameUrls = {
+    'retro-bowl': 'games/retro-bowl/index.html',
+    'tetris': 'games/tetris/index.html',
+    '2048': 'games/2048/index.html'
+};
